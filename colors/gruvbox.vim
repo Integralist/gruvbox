@@ -1,9 +1,9 @@
 " -----------------------------------------------------------------------------
 " File: gruvbox.vim
-" Description: Retro groove color scheme for Vim
-" Author: morhetz <morhetz@gmail.com>
+" Description: Modified to suit my needs
+" Author: morhetz <morhetz@gmail.com> (tweaked by Integralist)
 " Source: https://github.com/morhetz/gruvbox
-" Last Modified: 04 Sep 2015
+" Last Modified: 24 Dec 2016
 " -----------------------------------------------------------------------------
 
 " Supporting code -------------------------------------------------------------
@@ -375,9 +375,10 @@ function! s:HL(group, fg, ...)
     endif
   endif
 
+  " https://upload.wikimedia.org/wikipedia/en/1/15/Xterm_256color_chart.svg
   let histring = [ 'hi', a:group,
         \ 'guifg=' . fg[0], 'ctermfg=' . fg[1],
-        \ 'guibg=' . bg[0], 'ctermbg=' . bg[1],
+        \ 'guibg=' . bg[0], 'ctermbg=233',
         \ 'gui=' . emstr[:-2], 'cterm=' . emstr[:-2]
         \ ]
 
@@ -493,7 +494,7 @@ call s:HL('VertSplit', s:fg4, s:vert_split)
 call s:HL('WildMenu', s:blue, s:bg2, s:bold)
 
 " Directory names, special names in listing
-hi! link Directory GruvboxGreenBold
+hi! link Directory GruvboxGreen
 
 " Titles for output from :set all, :autocmd, etc.
 hi! link Title GruvboxGreenBold
@@ -549,24 +550,24 @@ call s:HL('Todo', s:vim_fg, s:vim_bg, s:bold . s:italic)
 call s:HL('Error', s:red, s:vim_bg, s:bold . s:inverse)
 
 " Generic statement
-hi! link Statement GruvboxRed
+hi! link Statement GruvboxOrange
 " if, then, else, endif, swicth, etc.
-hi! link Conditional GruvboxRed
+hi! link Conditional GruvboxOrange
 " for, do, while, etc.
-hi! link Repeat GruvboxRed
+hi! link Repeat GruvboxOrange
 " case, default, etc.
-hi! link Label GruvboxRed
+hi! link Label GruvboxOrange
 " try, catch, throw
-hi! link Exception GruvboxRed
+hi! link Exception GruvboxOrange
 " sizeof, "+", "*", etc.
 hi! link Operator Normal
 " Any other keyword
-hi! link Keyword GruvboxRed
+hi! link Keyword GruvboxOrange
 
 " Variable name
 hi! link Identifier GruvboxBlue
 " Function name
-hi! link Function GruvboxGreenBold
+hi! link Function GruvboxRedBold
 
 " Generic preprocessor
 hi! link PreProc GruvboxAqua
@@ -925,11 +926,11 @@ hi! link cStructure GruvboxOrange
 hi! link pythonBuiltin GruvboxOrange
 hi! link pythonBuiltinObj GruvboxOrange
 hi! link pythonBuiltinFunc GruvboxOrange
-hi! link pythonFunction GruvboxAqua
+hi! link pythonFunction GruvboxYellow
 hi! link pythonDecorator GruvboxRed
 hi! link pythonInclude GruvboxBlue
-hi! link pythonImport GruvboxBlue
-hi! link pythonRun GruvboxBlue
+hi! link pythonImport GruvboxAqua
+hi! link pythonRun GruvboxAqua
 hi! link pythonCoding GruvboxBlue
 hi! link pythonOperator GruvboxRed
 hi! link pythonExceptions GruvboxPurple
