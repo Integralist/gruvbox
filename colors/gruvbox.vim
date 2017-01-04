@@ -491,7 +491,7 @@ call s:HL('StatusLineNC', s:bg2, s:fg4, s:bold . s:inverse)
 call s:HL('VertSplit', s:fg4, s:vert_split)
 
 " Current match in wildmenu completion
-call s:HL('WildMenu', s:blue, s:bg2, s:bold)
+call s:HL('WildMenu', s:red, s:bg2, s:bold)
 
 " Directory names, special names in listing
 hi! link Directory GruvboxGreen
@@ -500,7 +500,7 @@ hi! link Directory GruvboxGreen
 hi! link Title GruvboxGreenBold
 
 " Error messages on the command line
-call s:HL('ErrorMsg',   s:bg0, s:red, s:bold)
+call s:HL('ErrorMsg',   s:red, s:red, s:bold)
 " More prompt: -- More --
 hi! link MoreMsg GruvboxYellowBold
 " Current mode message: -- INSERT --
@@ -611,9 +611,9 @@ hi! link Typedef GruvboxYellow
 
 if version >= 700
   " Popup menu: normal item
-  call s:HL('Pmenu', s:fg1, s:bg2)
+  call s:HL('Pmenu', s:bg2, s:fg1)
   " Popup menu: selected item
-  call s:HL('PmenuSel', s:bg2, s:blue, s:bold)
+  call s:HL('PmenuSel', s:red, s:bold)
   " Popup menu: scrollbar
   call s:HL('PmenuSbar', s:none, s:bg2)
   " Popup menu: scrollbar thumb
